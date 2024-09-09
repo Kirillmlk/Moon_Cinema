@@ -12,13 +12,12 @@ class Route
     ) {
     }
 
-    public static function get(string $uri, callable $action): static
+    public static function get(string $uri, callable|array $action): static
     {
         return new static($uri, 'GET', $action);
     }
 
-
-    public static function post(string $uri, callable $action): static
+    public static function post(string $uri, callable|array $action): static
     {
         return new static($uri, 'POST', $action);
     }
@@ -29,7 +28,7 @@ class Route
     }
 
 
-    public function getAction(): callable
+    public function getAction()
     {
         return $this->action;
     }
