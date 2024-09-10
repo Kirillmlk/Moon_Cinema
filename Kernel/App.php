@@ -1,9 +1,9 @@
 <?php
 
-namespace  App;
+namespace  App\Kernel;
 
-use App\Http\Request;
-use App\router\Router;
+use App\Kernel\Http\Request;
+use App\Kernel\router\Router;
 
 class App
 {
