@@ -11,4 +11,15 @@ class MovieController extends Controller
     {
         $this->view('movies');
     }
+
+    public function add(): void
+    {
+        $this->view('admin/movies/add');
+    }
+
+    public function store(): void
+    {
+        dd($this->request());
+
+    }
 }
