@@ -23,8 +23,6 @@ class MovieController extends Controller
 
     public function store()
     {
-        dd($this->db());
-
         $validation = $this->request()->validate([
             'name' => ['required', 'min:3', 'max:50'],
         ]);
@@ -36,7 +34,9 @@ class MovieController extends Controller
             $this->redirect('/admin/movies/add');
         }
 
-        dd('validation passed');
-
+        $id = $this->db()->insert('movies', [
+            'name' => $this->request()->input('name'),
+        ]);
+        dd("movie is added: $id");
     }
 }
