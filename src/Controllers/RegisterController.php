@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Kernel\Controller;
+namespace App\Controllers;
 
 use App\Kernel\Controller\Controller;
 
@@ -26,6 +26,11 @@ class RegisterController extends Controller
             $this->redirect('/register');
         }
 
-        dd("user is registered");
+        $userId = $this->db()->insert('users', [
+            'email' => $this->request()->input('email'),
+            'password' => password_hash($this->request()->input('password'), PASSWORD_DEFAULT),
+        ]);
+
+        dd("user is added. id is: $userId");
     }
 }
