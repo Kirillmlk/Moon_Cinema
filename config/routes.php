@@ -12,6 +12,8 @@ return [
     Route::get('/', [HomeController::class, 'index']),
     Route::get('/register', [RegisterController::class, 'index']),
     Route::post('/register', [RegisterController::class, 'register']),
+    Route::get('/login', [LoginController::class, 'index']),
+    Route::post('/login', [LoginController::class, 'login']),
 ];
 //    Route::get('/movies', [MovieController::class, 'index']),
 //    Route::get('/admin/movies/add', [MovieController::class, 'add'], [AuthMiddleware::class]),
