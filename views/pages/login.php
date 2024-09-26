@@ -17,7 +17,7 @@
         <div class="d-flex" style="align-items: center; justify-content: space-between">
             <h2>Вход</h2>
             <a href="/" class="d-flex align-items-center mb-5 mb-lg-0 text-white text-decoration-none">
-                <h5 class="m-0">Кинопоиск <span class="badge bg-warning warn__badge">Lite</span></h5>
+                <h5 class="m-0">Кинопоиск<span class="badge bg-warning warn__badge">Lite</span></h5>
             </a>
         </div>
 
