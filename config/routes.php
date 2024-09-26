@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\AdminController;
 use App\Controllers\HomeController;
 use App\Controllers\LoginController;
 use App\Controllers\MovieController;
@@ -14,6 +15,8 @@ return [
     Route::post('/register', [RegisterController::class, 'register']),
     Route::get('/login', [LoginController::class, 'index']),
     Route::post('/login', [LoginController::class, 'login']),
+    Route::post('/logout', [LoginController::class, 'logout']),
+    Route::get('/admin', [AdminController::class, 'index']),
 ];
 //    Route::get('/movies', [MovieController::class, 'index']),
 //    Route::get('/admin/movies/add', [MovieController::class, 'add'], [AuthMiddleware::class]),
