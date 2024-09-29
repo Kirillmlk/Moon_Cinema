@@ -47,5 +47,31 @@ class CategoryController extends Controller
         return $this->service;
     }
 
+    public function edit(): void
+    {
+        $category = $this->service()->find($this->request()->input('id'));
 
+        $this->view('admin/categories/update', [
+            'category' => $category
+        ]);
+    }
+
+    public function update(): void
+    {
+        $validation = $this->request()->validate([
+            'name' => ['required', 'max:255'],
+        ]);
+
+        if (!$validation) {
+            foreach ($this->request()->errors() as $field => $errors) {
+                $this->session()->set($field, $errors);
+            }
+            $this->redirect("/admin/categories/update?id={$this->request()->input('id')}");
+        }
+        $this->service()->update(
+            $this->request()->input('id'),
+            $this->request()->input('name')
+        );
+        $this->redirect('/admin');
+    }
 }
