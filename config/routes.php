@@ -20,6 +20,7 @@ return [
     Route::get('/admin', [AdminController::class, 'index']),
     Route::get('/admin/categories/add', [CategoryController::class, 'create']),
     Route::post('/admin/categories/add', [CategoryController::class, 'store']),
+    Route::post('/admin/categories/destroy', [CategoryController::class, 'destroy']),
 ];
 //    Route::get('/movies', [MovieController::class, 'index']),
 //    Route::get('/admin/movies/add', [MovieController::class, 'add'], [AuthMiddleware::class]),
