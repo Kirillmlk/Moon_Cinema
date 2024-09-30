@@ -51,6 +51,14 @@ class MovieController extends Controller
         $this->redirect('/admin');
     }
 
+
+    public function destroy(): void
+    {
+        $this->service()->destroy($this->request()->input('id'));
+
+        $this->redirect('/admin');
+    }
+
     private function service(): MovieService
     {
 
